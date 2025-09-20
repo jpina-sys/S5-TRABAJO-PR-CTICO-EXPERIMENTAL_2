@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colores de Linterna Verde */
+:root {
+    --lantern-green: #00e55f;
+    --space-black: #0d1117;
+    --light-text: #e6edf3;
+    --dark-text: #1a1a1a;
+    --error-red: #ff4d4d;
+}
+
+body {
+    font-family: 'Segoe UI', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: linear-gradient(45deg, var(--space-black), #002b11);
+    color: var(--light-text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #161b22;
+    padding: 40px;
+    border-radius: 10px;
+    border: 3px solid var(--lantern-green);
+    box-shadow: 0 0 25px var(--lantern-green), 0 0 50px rgba(0, 229, 95, 0.3);
+    width: 100%;
+    max-width: 480px;
+}
+
+.form-title {
+    text-align: center;
+    color: var(--lantern-green);
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px var(--lantern-green), 0 0 15px #ffffff4d;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light-text);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--space-black);
+    color: var(--light-text);
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--lantern-green);
+    box-shadow: 0 0 10px var(--lantern-green);
+}
+
+/* --- ESTILOS DE BOTONES CON MOVIMIENTO --- */
+.submit-btn, .reset-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 0 #00000066;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, filter 0.2s ease;
+}
+
+.submit-btn:hover, .reset-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 10px #00000066;
+    filter: brightness(1.2);
+}
+
+.submit-btn:active, .reset-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 0 #00000066;
+}
+
+.submit-btn {
+    background-color: var(--lantern-green);
+    color: var(--dark-text);
+}
+
+.reset-btn {
+    background-color: #30363d; /* Gris oscuro */
+    color: var(--light-text);
+    margin-top: 15px;
+}
+/* --- FIN DE ESTILOS DE BOTONES --- */
+
+.error-message {
+    background-color: #4d0000;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--error-red);
+}
+
+.success-message {
+    background-color: #0b3d2c;
+    color: var(--lantern-green);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border: 2px solid var(--lantern-green);
+}
+
+.form-input.error {
+    border-color: var(--error-red) !important;
+    background-color: #2c0000 !important;
+}
+
+/* Animación de entrada */
+.form-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.form-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.speak-btn {
+  background: transparent;
+  border: 2px solid var(--lantern-green);
+  color: var(--lantern-green);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.speak-btn:hover {
+  background: var(--lantern-green);
+  color: var(--dark-text);
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 0 15px var(--lantern-green);
+}
